@@ -116,7 +116,7 @@ def submit(request, course_id):
     if(user):
         enrollObj = Enrollment.objects.get(user=user, course=course)
         subs = Submission.objects.create(enrollment=enrollObj)
-             
+        
         submission_id = subs.pk
         subs.choice_list.clear()
         submitted_anwsers = extract_answers(request)
